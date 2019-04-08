@@ -11,8 +11,7 @@ class Student
 
   def self.all
     sql = <<-SQL
-      SELECT *
-      FROM students 
+      SELECT * FROM students 
     SQL
     DB[:conn].execute(sql).each do |row|
       @@all << self.new_from_db(row)
