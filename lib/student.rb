@@ -17,6 +17,7 @@ class Student
     DB[:conn].execute(sql).each do |row|
       @@all << self.new_from_db(row)
     end 
+    @@all
   end
 
   def self.find_by_name(name)
