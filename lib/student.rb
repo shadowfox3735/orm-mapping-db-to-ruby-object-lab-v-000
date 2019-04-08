@@ -19,7 +19,7 @@ class Student
       SELECT * FROM students WHERE name = ?
     SQL
 
-    DB[:conn].execute(sql, self.name, self.grade)
+    DB[:conn].execute(sql, name)
   end
   
   def save
@@ -28,7 +28,7 @@ class Student
       VALUES (?, ?)
     SQL
 
-    DB[:conn].execute(sql, self.name)
+    DB[:conn].execute(sql, self.name, self.grade)
   end
   
   def self.create_table
