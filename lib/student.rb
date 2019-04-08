@@ -13,6 +13,7 @@ class Student
     sql = <<-SQL
       SELECT * FROM students 
     SQL
+    
     DB[:conn].execute(sql).each do |row|
       @@all << self.new_from_db(row)
     end 
